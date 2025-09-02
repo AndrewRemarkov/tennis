@@ -1,0 +1,14 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.3em;
+  padding: 8px 12px;
+  color: var(--color-white);
+  background-color: transparent;
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    color: var(--color-white);
+    transform: scale(1.25);
+  }
+}

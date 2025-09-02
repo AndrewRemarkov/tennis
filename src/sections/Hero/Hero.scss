@@ -1,0 +1,82 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: calc(-100px - var(--border-width-s));
+  padding-bottom: var(--section-padding-y);
+  text-align: start;
+
+  @include mobile {
+    min-height: 639px;
+  }
+
+  &__pano {
+    flex-grow: 1;
+    padding-top: calc(fluid(195, 150) + 100px + var(--border-width-s));
+
+    //    padding-bottom: fluid(131, 50);
+    background: url('@/assets/images/hero/bg.png') 50% / cover no-repeat;
+  }
+
+  &__pano-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 694px;
+
+    @include tablet {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    max-width: 636px;
+    padding-bottom: 60px;
+  }
+
+  &__play {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    max-width: 290px;
+
+    @include hover {
+      .hero__play-button {
+        transform: scale(1.25);
+      }
+    }
+
+    &-button {
+      @include square(80px);
+      @include flex-center;
+
+      color: var(--color-white);
+      background-color: var(--color-accent);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      outline: 2px solid var(--color-subaccent);
+      outline-offset: 4px;
+    }
+
+    &-text {
+      max-width: 168px;
+      font-size: fluid(18, 14);
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--color-white);
+    }
+  }
+
+  &__card-box-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 17px;
+    margin-top: auto;
+
+    @include laptop {
+      justify-content: center;
+      padding-top: 80px;
+    }
+  }
+}
